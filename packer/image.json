@@ -1,0 +1,20 @@
+{
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./playbook.yml"
+    }
+  ],
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "/etc/creds/admin.json",
+      "project_id": "forward-cab-254117",
+      "source_image_family": "ubuntu-1804-lts",
+      "zone": "us-central1-a",
+      "image_name": "nginx-image",
+      "ssh_username": "root",
+      "state_timeout": "10m"
+    }
+  ]
+  }

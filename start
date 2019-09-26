@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd packer
+packer build -force image.json
+
+cd ../terraform
+terraform apply -auto-approve
