@@ -1,9 +1,9 @@
 resource "google_compute_instance" "nginx" {
-  name         = "nginx"
+  name         = "${var.app_name}"
   machine_type = "n1-standard-1"
   zone         = "us-central1-a"
 
-  tags = ["test", "nginx"]
+  tags = ["test", "${var.app_name}"]
 
   boot_disk {
     initialize_params {
